@@ -1,0 +1,82 @@
+{
+  "api": {
+    "base_url": "https://app.lexpai.com/api",
+    "endpoint": "/machine.php",
+    "api_key": "your_api_key_here",
+    "timeout": 30,
+    "retry_attempts": 3,
+    "batch_size": 10
+  },
+  "device": {
+    "name": "Coating Machine 1",
+    "type": "coating_machine",
+    "location": "Factory A",
+    "timezone": "Europe/Istanbul",
+    "device_id": "auto-generated",
+    "firmware_version": "1.0.0",
+    "hardware_version": "1.0.0"
+  },
+  "data_collection": {
+    "interval": 60,
+    "batch_size": 10,
+    "compression": true,
+    "encryption": false,
+    "max_retries": 3
+  },
+  "sensors": {
+    "temperature": {
+      "enabled": true,
+      "type": "temperature",
+      "pin": 18,
+      "calibration": 0.0,
+      "thresholds": {
+        "warning_low": 15,
+        "warning_high": 35,
+        "critical_low": 10,
+        "critical_high": 40
+      }
+    },
+    "humidity": {
+      "enabled": true,
+      "type": "humidity",
+      "pin": 19,
+      "calibration": 0.0,
+      "thresholds": {
+        "warning_low": 30,
+        "warning_high": 70,
+        "critical_low": 20,
+        "critical_high": 80
+      }
+    },
+    "pressure": {
+      "enabled": false,
+      "type": "pressure",
+      "pin": 20,
+      "calibration": 0.0,
+      "thresholds": {
+        "warning_low": 1000,
+        "warning_high": 1025,
+        "critical_low": 990,
+        "critical_high": 1035
+      }
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "/var/log/lxpcloud-agent.log",
+    "max_size": "10MB",
+    "backup_count": 5,
+    "console_output": true
+  },
+  "network": {
+    "wifi_ssid": "",
+    "wifi_password": "",
+    "ethernet_priority": true,
+    "connection_timeout": 30
+  },
+  "location": {
+    "latitude": 41.0082,
+    "longitude": 28.9784,
+    "altitude": 100
+  }
+} 
